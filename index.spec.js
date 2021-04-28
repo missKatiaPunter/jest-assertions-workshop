@@ -1,6 +1,7 @@
 const { minVal, fizzBuzz, timesTwo, returnObjects } = require('./index');
 
 test('passes when value is NaN', () => {
+  expect(NaN).toBeNaN();
 	expect(NaN).toBeNaN();
 	expect(1).not.toBeNaN();
 	expect(typeof NaN).toBe('number');
@@ -80,8 +81,10 @@ describe('Testing function returnObject', () => {
     it('Should return array of same length', () => {
         expect(returnObjects(['a','b','c'])).toHaveLength(3);
     });
+
     it('Should return an array', () => {
       expect(returnObjects(['a','b','c'])).toBeInstanceOf(Array); 
+        expect(fizzBuzz(10)).toHaveLength(4);
     });
     
     it('Each element of array should be an Object with name and id', () => {
