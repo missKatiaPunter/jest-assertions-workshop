@@ -10,7 +10,7 @@ describe('Testing function minVal()', () => {
         expect(typeof minVal([1,2,34,0,-12])).toBe('number');
         expect(minVal([1,2,34,0,-12])).not.toBeInstanceOf(Object);
     });
-    it('Shoul get a minimal value from an array', () => {
+    it('Should get a minimal value from an array', () => {
         expect(minVal([])).toBe(-12);
     });
 });
