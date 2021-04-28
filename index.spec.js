@@ -1,4 +1,4 @@
-const { minVal, fizzBuzz, timesTwo } = require('./index');
+const { minVal, fizzBuzz, timesTwo, returnObjects } = require('./index');
 test('passes when value is NaN', () => {
     expect(NaN).toBeNaN();
     expect(1).not.toBeNaN();
@@ -40,6 +40,30 @@ describe('Testing function fizzBuzz()', () => {
         expect(fizzBuzz(3)).toContain('fizz');
         expect(fizzBuzz(15)).toContain('fizzbuzz');        
     })
+});
+
+//Work done in pairs in a break room
+describe('Testing function returnObject', () => {
+    it('Should return array of same length', () => {
+        expect(returnObjects(['a','b','c'])).toHaveLength(3);
+    });
+    it('Should return an array', () => {
+      expect(returnObjects(['a','b','c'])).toBeInstanceOf(Array); 
+    });
+    
+    it('Each element of array should be an Object with name and id', () => {
+      arrObj = returnObjects(['a','b','c'])
+      for (i in arrObj){
+        expect(returnObjects(['a','b','c'])[i]).toHaveProperty('name');
+        expect(returnObjects(['a','b','c'])[i]).toHaveProperty('id');
+        expect(returnObjects(['a','b','c'])[i]).toBeInstanceOf(Object);
+        expect(returnObjects(['a','b','c'])[i]).not.toBeInstanceOf(Array);
+      }
+    });
+    
+    it('returns an array with elements as objects', () => {
+        expect(returnObjects(['a','b','c'])).toEqual([{ name: 'a', id: 1 }, { name: 'b', id: 2 }, { name: 'c', id: 3 }]);
+    });
 });
 
 

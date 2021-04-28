@@ -54,4 +54,4 @@ function removeBMW(str){
     return str.replace(/[bmw]/gi,'');
 }
 
-module.exports = { minVal, fizzBuzz, timesTwo };
+module.exports = { minVal, fizzBuzz, timesTwo, returnObjects };
