@@ -1,4 +1,5 @@
-const { minVal, fizzBuzz, timesTwo } = require('./index');
+const { minVal, fizzBuzz, timesTwo, returnObjects, removeBMW } = require('./index');
+
 test('passes when value is NaN', () => {
     expect(NaN).toBeNaN();
     expect(1).not.toBeNaN();
@@ -6,13 +7,30 @@ test('passes when value is NaN', () => {
 });
 
 describe('Testing function minVal()', () => {
+<<<<<<< HEAD
     it('Should return a value of data type number', () => {
         expect(typeof minVal([1,2,34,0,-12])).toBe('number');
         expect(minVal([1,2,34,0,-12])).not.toBeInstanceOf(Object);
     });
     it('Should get a minimal value from an array', () => {
         expect(minVal([1,5,13,-10,-12])).toBe(-12);
+=======
+  
+    it('Should throw an error if a parameter is not valid', () => {
+     expect(()=> {
+         minVal([])
+     }).toThrow("enter a valid value"); 
     });
+    it('Shoul return a value of data type number', () => {
+        expect(typeof minVal([1,2,34,0,-12])).toBe('number');
+        expect(minVal([1,2,34,0,-12])).not.toBeInstanceOf(Object);
+    });
+  
+    it('Should get a minimal value from an array', () => {
+        expect(minVal([1,2,34,0,-12])).toBe(-12);
+>>>>>>> 3030fbbe7917330eb9d7b4a170dc2fde62b2e6d7
+    });
+  
 });
 
 describe('Testing function timesTwo()', () => {
@@ -23,12 +41,38 @@ describe('Testing function timesTwo()', () => {
 
 describe('Testing function fizzBuzz()', () => {
     it('returns an array of the same length as a parameter', () => {
+<<<<<<< HEAD
         expect(fizzBuzz(10)).toHaveLength(4);
     });
     it('returns an array with some fizz, buzz and fizzbuzz', () => {
         expect(fizzBuzz(3)).toContain('fizz');
         expect(fizzBuzz(30)).toContain('fizzbuzz');
+=======
+        expect(fizzBuzz(10)).toHaveLength(10);
+    });
+    it('returns an array with some fizz, buzz and fizzbuzz', () => {
+        expect(fizzBuzz(3)).toContain('fizz');
+        expect(fizzBuzz(5)).toContain('buzz');
+        expect(fizzBuzz(15)).toContain('fizzbuzz');
+>>>>>>> 3030fbbe7917330eb9d7b4a170dc2fde62b2e6d7
     })
 });
 
+describe('Testing returnobjects()', () => {
+    it('should return an array', () => {
+        expect(returnObjects(['a','b'])).toBeInstanceOf(Object);
+        expect(returnObjects(['a','b'])[0]).toHaveProperty('name');        
+    });
+    
+});
 
+describe('testing removeBMW()', () => {
+    it('should throw an error if a parameter is invalid ', () => {
+        expect(()=>{
+            removeBMW(100)
+        }).toThrow("This program only works for text.");
+    });
+    it('should remove bmw', () => {
+        expect(removeBMW('Nobmw')).toBe('No');
+    });
+});
