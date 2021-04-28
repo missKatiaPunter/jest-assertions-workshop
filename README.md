@@ -1,5 +1,6 @@
 # What are Assertions?
 
+
 Below is what I personally believe Assertions are with one benifit and limitation: 
 
 - An assertion is a boolean value function which essentially returns a true or false;
@@ -7,4 +8,22 @@ Below is what I personally believe Assertions are with one benifit and limitatio
 - Assertions are used to detect any possible subtle errors which may go unoticed and impact the success of the code;
 - A limitation of assertion is that it may sometimes fail to report bugs that exist;
 
-Another edit. For testing purposes. 
+> The aim of the workshop is to:
+* Write and refactor functions
+* To write tests
+* To get familiar with jest 
+
+
+
+Instructions for this workshop are as follows: 
+
+
+
+The first instruction in this workshop is to edit the README
+
+
+Then someone else can make changes:):
+
+## read me test
+
+
