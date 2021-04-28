@@ -16,11 +16,8 @@ const minVal = arrVal =>{
 
 const fizzBuzz = n => {
     let result = [];
-<<<<<<< HEAD
     for(let i=0;i<=n;i++){
-=======
-    for(let i=1;i<n+1;i++){
->>>>>>> 3030fbbe7917330eb9d7b4a170dc2fde62b2e6d7
+
         if(i%5===0 && i%3===0){
             result.push('fizzbuzz');
         } else if(i%3===0){
@@ -31,7 +28,7 @@ const fizzBuzz = n => {
             result.push(i);
         }
     }
-  return result[result.length-1];
+  return result;
 }
 
 //Test function timesTwo with different tests and a single describe block
