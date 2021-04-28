@@ -99,8 +99,6 @@ describe('Testing the function returnObjects()', () => {
     it(' ', () => {
         console.log(returnObjects(['asd', 1, 'asda', 2, 'asdd', 3 , 'asds', 4]));
     });
-});
-
 
         expect(fizzBuzz(10)).toHaveLength(4);
     });
