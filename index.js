@@ -4,11 +4,15 @@
 // Test the refactored function
 
 const minVal = arrVal => {
-    if (arrVal.length === 0) {
-        throw new Error("Please enter a parameter");
-    }
-    return Math.min(...arrVal);
-}
+
+  if(arrVal == null) {
+    throw new Error("Error: Parameter is empty")
+  }
+  else if(arrVal.length === 0) {
+     throw new Error("Error: Array is empty")
+  }
+
+  return Math.min(...arrVal);
 
 
 // Test function fizzBuzz thoroughly
@@ -17,13 +21,16 @@ const minVal = arrVal => {
 
 const fizzBuzz = n => {
     let result = [];
-    for(let i=1;i<n+1;i++){
-        if(i%15===0){
+
+    for(let i=1;i<=n;i++){
+        if(i%3===0 && i%5!==0){
             result.push('fizzbuzz');
         } else if(i%3===0){
             result.push('fizz');
-        } else if(i%5===0){
+        } else if(i%5===0 && i%3!==0){
             result.push('buzz');
+        } else if(i%5===0 && i%3===0){
+            result.push('fizzbuzz');
         } else{
             result.push(i);
         }
@@ -42,6 +49,7 @@ const timesTwo = numbersToIncrease => numbersToIncrease.map(value => value*2);
 // You can use isInstanceOf to test each element in that array
 // You can use toHaveProperty() to check each element of the returned array
 
+
 const returnObjects = arrNames => arrNames.map((name, index) => ({name, id: index+1}));
 
 // Test function removeBMW()
@@ -49,9 +57,10 @@ const returnObjects = arrNames => arrNames.map((name, index) => ({name, id: inde
 
 function removeBMW(str){
     if (typeof str !== 'string') {
-        throw new Error("This program only works for text.");
+        throw new Error("Error: You should only enter text.");
     }
     return str.replace(/[bmw]/gi,'');
 }
 
-module.exports = { minVal, fizzBuzz, timesTwo, returnObjects };
+module.exports = { minVal, fizzBuzz, timesTwo, returnObjects, removeBMW};
+
