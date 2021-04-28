@@ -3,7 +3,12 @@
 // Refactor the function so that it does not allow to enter an empty array (throw)
 // Test the refactored function
 
-const minVal = arrVal => Math.min(...arrVal);
+const minVal = arrVal => {
+    if(arrVal.length === 0){
+        throw new Error("Array cannot be empty");
+    }
+    return Math.min(...arrVal);
+}
 
 // Test function fizzBuzz thoroughly
 // Does it have a logic error?
@@ -11,19 +16,21 @@ const minVal = arrVal => Math.min(...arrVal);
 
 const fizzBuzz = n => {
     let result = [];
-    for(let i=0;i<n;i++){
-        if(i%3===0){
-            result.push('fizz');
+    for(let i=1;i<=n;i++){
+        if(i%5===0 && i%3===0){
+            result.push('fizzbuzz');
         } else if(i%5===0){
             result.push('buzz');
-        } else if(i%5===0 && i%3===0){
-            result.push('fizzbuzz');
+        } else if(i%3===0){
+            result.push('fizz');
         } else{
             result.push(i);
         }
     }
   return result;
 }
+
+
 
 //Test function timesTwo with different tests and a single describe block
 // You can use isInstanceOf to test if it returns an array
@@ -48,4 +55,4 @@ function removeBMW(str){
     return str.replace(/[bmw]/gi,'');
 }
 
-module.exports = { minVal, fizzBuzz, timesTwo };
+module.exports = { minVal, fizzBuzz, timesTwo, returnObjects };
