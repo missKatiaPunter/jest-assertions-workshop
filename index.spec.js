@@ -63,7 +63,6 @@ describe('Testing returnobjects()', () => {
         expect(returnObjects(['a','b'])).toBeInstanceOf(Object);
         expect(returnObjects(['a','b'])[0]).toHaveProperty('name');        
     });
-    
 });
 
 describe('testing removeBMW()', () => {
