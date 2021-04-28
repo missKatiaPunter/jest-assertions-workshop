@@ -7,6 +7,7 @@ test('passes when value is NaN', () => {
 });
 
 describe('Testing function minVal()', () => {
+  
     it('Should throw an error if a parameter is not valid', () => {
      expect(()=> {
          minVal([])
@@ -16,9 +17,11 @@ describe('Testing function minVal()', () => {
         expect(typeof minVal([1,2,34,0,-12])).toBe('number');
         expect(minVal([1,2,34,0,-12])).not.toBeInstanceOf(Object);
     });
-    it('Shoul get a minimal value from an array', () => {
+  
+    it('Should get a minimal value from an array', () => {
         expect(minVal([1,2,34,0,-12])).toBe(-12);
     });
+  
 });
 
 describe('Testing function timesTwo()', () => {
