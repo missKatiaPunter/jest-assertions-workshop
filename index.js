@@ -13,7 +13,7 @@ const minVal = arrVal => {
   }
 
   return Math.min(...arrVal);
-}
+
 
 // Test function fizzBuzz thoroughly
 // Does it have a logic error?
@@ -21,9 +21,11 @@ const minVal = arrVal => {
 
 const fizzBuzz = n => {
     let result = [];
-  
+
     for(let i=1;i<=n;i++){
         if(i%3===0 && i%5!==0){
+            result.push('fizzbuzz');
+        } else if(i%3===0){
             result.push('fizz');
         } else if(i%5===0 && i%3!==0){
             result.push('buzz');
@@ -61,3 +63,4 @@ function removeBMW(str){
 }
 
 module.exports = { minVal, fizzBuzz, timesTwo, returnObjects, removeBMW};
+
