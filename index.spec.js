@@ -2,8 +2,6 @@ const { minVal, fizzBuzz, timesTwo, returnObjects, removeBMW } = require('./inde
 
 test('passes when value is NaN', () => {
     expect(NaN).toBeNaN();
-    expect(1).not.toBeNaN();
-    expect(typeof NaN).toBe('number');
 });
 
 describe('Testing function minVal()', () => {
