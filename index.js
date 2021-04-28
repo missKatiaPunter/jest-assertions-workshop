@@ -4,15 +4,11 @@
 // Test the refactored function
 
 const minVal = arrVal => {
-
-  if(arrVal == null) {
-    throw new Error("Error: Parameter is empty")
-  }
-  else if(arrVal.length === 0) {
-     throw new Error("Error: Array is empty")
-  }
-
+    if(!arrVal || arrVal.length === 0) {
+        throw new Error("Please enter a parameter");
+    }
   return Math.min(...arrVal);
+}
 
 
 // Test function fizzBuzz thoroughly
@@ -21,21 +17,18 @@ const minVal = arrVal => {
 
 const fizzBuzz = n => {
     let result = [];
-
-    for(let i=1;i<=n;i++){
-        if(i%3===0 && i%5!==0){
+    for(let i=1; i<=n; i++){
+        if(i%3===0 && i%5===0){
             result.push('fizzbuzz');
         } else if(i%3===0){
             result.push('fizz');
         } else if(i%5===0 && i%3!==0){
             result.push('buzz');
-        } else if(i%5===0 && i%3===0){
-            result.push('fizzbuzz');
         } else{
             result.push(i);
         }
     }
-  return result;
+    return result;
 }
 
 //Test function timesTwo with different tests and a single describe block
@@ -63,4 +56,3 @@ function removeBMW(str){
 }
 
 module.exports = { minVal, fizzBuzz, timesTwo, returnObjects, removeBMW};
-
