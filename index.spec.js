@@ -25,7 +25,7 @@ describe('Testing function minVal()', () => {
     });
 
     it('Should get a minimal value from an array', () => {
-        expect(minVal([2, -12])).toBe(-12);
+        expect(minVal([2,-3,4,-5,10,4,-12])).toBe(-12);
     });
   
 });
