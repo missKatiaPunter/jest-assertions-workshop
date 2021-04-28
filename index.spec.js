@@ -1,4 +1,5 @@
-const { minVal, fizzBuzz, timesTwo, returnObjects } = require('./index');
+const { minVal, fizzBuzz, timesTwo, returnObjects, removeBMW } = require('./index');
+
 test('passes when value is NaN', () => {
     expect(NaN).toBeNaN();
     expect(1).not.toBeNaN();
@@ -6,20 +7,30 @@ test('passes when value is NaN', () => {
 });
 
 describe('Testing function minVal()', () => {
-    it('Shoul return a value of data type number', () => {
+  
+    it('Should throw an error if a parameter is not valid', () => {
+     expect(()=> {
+         minVal([])
+     }).toThrow("enter a valid value"); 
+    });
+    it('Should return a value of data type number', () => {
         expect(typeof minVal([1,2,34,0,-12])).toBe('number');
         expect(minVal([1,2,34,0,-12])).not.toBeInstanceOf(Object);
     });
-    it('Shoul get a minimal value from an array', () => {
+
+    it('Should get a minimal value from an array', () => {
         expect(minVal([1,2,3,4])).toBe(1);
         expect(minVal([3,3,3,3])).toBe(3);
         expect(()=>{minVal([])}).toThrow('Array cannot be empty');
     });
+  
 });
 
 describe('Testing function timesTwo()', () => {
     it('returns an array where numbers are doubled', () => {
+
         expect(Array.isArray(timesTwo([1,2]))).toBe(true);
+
         expect(timesTwo([1,2])).toEqual([2,4]);
     });
 });
@@ -30,9 +41,11 @@ describe('Testing function fizzBuzz()', () => {
     });
     it('returns an array with some fizz, buzz and fizzbuzz', () => {
         expect(fizzBuzz(3)).toContain('fizz');
+        expect(fizzBuzz(5)).toContain('buzz');
         expect(fizzBuzz(15)).toContain('fizzbuzz');
     })
 });
+
 
 
 describe('Testing function returnObjects()',()=>{
@@ -45,6 +58,18 @@ describe('Testing function returnObjects()',()=>{
     });
     it('check if each item of the array is a valid object',()=>{
         returnObjects(['Bob','Harry']).map(obj=>{expect(obj).toBeInstanceOf(Object);});
+    });
+});
+
+
+describe('testing removeBMW()', () => {
+    it('should throw an error if a parameter is invalid ', () => {
+        expect(()=>{
+            removeBMW(100)
+        }).toThrow("This program only works for text.");
+    });
+    it('should remove bmw', () => {
+        expect(removeBMW('Nobmw')).toBe('No');
     });
 });
 
