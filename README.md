@@ -6,5 +6,6 @@ Instructions for this workshop are as follows:
 - this is a test;
 - ipsum lorem;
 - content tbc.
+- test
 
 Another edit. For testing purposes. 
