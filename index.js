@@ -1,20 +1,21 @@
 // Test function minVal with one describe block and several tests and assertions
 // Suggestion: you may want to check what data type is returned
 // Refactor the function so that it does not allow to enter an empty array (throw)
-// Test the refactored function
-
-const minVal = arrVal => {
-    if(arrVal.length === 0){
+// Test the refactored functionconst minVal = arrVal => {
+    
+if(arrVal.length === 0){
         throw new Error('Array is empty')
     }
     return Math.min(...arrVal);
 }
+
 // Test function fizzBuzz thoroughly
 // Does it have a logic error?
 // Refactor and test some more
 
 const fizzBuzz = n => {
     let result = [];
+
     for(let i=1;i<=n;i++){
         if(i%5===0 && i%3===0){
             result.push('fizzbuzz');
@@ -52,4 +53,6 @@ function removeBMW(str){
     return str.replace(/[bmw]/gi,'');
 }
 
-module.exports = { minVal, fizzBuzz, timesTwo, returnObjects };
+
+module.exports = { minVal, fizzBuzz, timesTwo, returnObjects,removeBMW };
+
